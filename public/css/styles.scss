@@ -1,0 +1,197 @@
+/* General styles and layout */
+
+body {
+  background: #000 url(../images/bg.jpg);
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h4 {
+  margin-bottom: 30px;
+}
+
+/*LOGO*/
+
+.logo {
+  margin-top: 50px;
+}
+
+/*RADIO BUTTONS*/
+
+.radio label {
+  text-transform: uppercase;
+}
+
+[type="radio"] {
+  &:not(:checked) + label {
+    font-size: 2em;
+    color: white;
+  }
+  &:checked + label {
+    font-size: 2em;
+    color: white;
+    &:after {
+      background-color: yellow;
+    }
+  }
+  &.with-gap:checked + label:after {
+    background-color: yellow;
+  }
+  &:checked + label:after {
+    border: 2px solid white;
+  }
+  &.with-gap:checked + label {
+    &:before, &:after {
+      border: 2px solid white;
+    }
+  }
+}
+
+/*SEARCH BAR*/
+
+input {
+  &:not([type]):focus:not([readonly]), &[type=text]:not(.browser-default):focus:not([readonly]), &[type=password]:not(.browser-default):focus:not([readonly]), &[type=email]:not(.browser-default):focus:not([readonly]), &[type=url]:not(.browser-default):focus:not([readonly]), &[type=time]:not(.browser-default):focus:not([readonly]), &[type=date]:not(.browser-default):focus:not([readonly]), &[type=datetime]:not(.browser-default):focus:not([readonly]), &[type=datetime-local]:not(.browser-default):focus:not([readonly]), &[type=tel]:not(.browser-default):focus:not([readonly]), &[type=number]:not(.browser-default):focus:not([readonly]), &[type=search]:not(.browser-default):focus:not([readonly]) {
+    border-bottom: 1px solid yellow;
+    box-shadow: 0 1px 0 0 yellow;
+    font-size: 2rem;
+  }
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid yellow;
+  box-shadow: 0 1px 0 0 yellow;
+  font-size: 2rem;
+}
+
+input {
+  &:not([type]), &[type=text]:not(.browser-default), &[type=password]:not(.browser-default), &[type=email]:not(.browser-default), &[type=url]:not(.browser-default), &[type=time]:not(.browser-default), &[type=date]:not(.browser-default), &[type=datetime]:not(.browser-default), &[type=datetime-local]:not(.browser-default), &[type=tel]:not(.browser-default), &[type=number]:not(.browser-default), &[type=search]:not(.browser-default) {
+    font-size: 2rem;
+  }
+}
+
+textarea.materialize-textarea {
+  font-size: 2rem;
+}
+
+/*BUTTONS*/
+
+.btn {
+  color: black;
+  &:hover:before {
+    opacity: 1;
+  }
+  &:before {
+    content: '';
+    opacity: 0;
+    background-color: yellow;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: opacity .2s;
+    z-index: -1;
+  }
+}
+
+.back-btn {
+  margin-top: 20px;
+  background-color: yellow;
+  color: black;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.object {
+  font-size: 2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  margin: 2%;
+}
+
+li a {
+  color: white;
+  &:hover {
+    color: #ffff00;
+  }
+}
+
+.starships {
+  background-image: url('../images/starship.jpg');
+}
+
+.people {
+  background-image: url('../images/people.jpg');
+}
+
+.planets {
+  background-image: url('../images/planet.jpg');
+}
+
+/*ANIMATION*/
+
+#titles {
+  position: absolute;
+  width: 18em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -9em;
+  font-size: 350%;
+  font-weight: bold;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+  color: yellow;
+  &:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0, 0, 0, 1) 0%, transparent 100%);
+    pointer-events: none;
+  }
+}
+
+#titlecontent {
+  position: absolute;
+  top: 100%;
+  animation: scroll 100s linear 4s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: -170%;
+  }
+}
+
+
+/*MEDIA QUERIES*/
+
+@media only screen and (min-width: 993px) {
+  .row .col.l4 {
+    width: 31.33333%;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .row .col.m6 {
+    width: 48%;
+    margin: 1%;
+  }
+}
