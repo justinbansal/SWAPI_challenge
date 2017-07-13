@@ -7,9 +7,11 @@ class Main extends Component {
         //PRESENTING THE CATEGORIES AS A LIST 
         let listArray = this.props.data.map((object)=>{
             return (
-                <div className={`${this.props.selectedCategory === 'starships'?'starships': this.props.selectedCategory === 'planets' ? 'planets'  :  'people'} object col s12 m6 l4`}>
-                    <li><Link to={`/details/${this.props.selectedCategory}/`+object.url.replace(/\D/gi,'')}>{object.name}</Link></li>
-                </div>
+                <Link to={`/details/${this.props.selectedCategory}/`+object.url.replace(/\D/gi,'')}>
+                    <div className={`${this.props.selectedCategory === 'starships'?'starships': this.props.selectedCategory === 'planets' ? 'planets'  :  'people'} object col s12 m6 l4`}>
+                        <li className="list-item">{object.name}</li>
+                    </div>
+                </Link>
             )
         })
 
@@ -19,15 +21,15 @@ class Main extends Component {
                 <h4>Search by:</h4>
                 <form className="container" onSubmit={this.props.handleSubmit}>
                     <div className="row">
-                        <p className="radio col s12 l4">
+                        <p className="radio col s12 m4 l4">
                             <input type="radio" value="people" id="people" checked={this.props.selectedCategory === 'people'} onChange={this.props.handleCategoryChange}/>
                             <label htmlFor="people">People</label>
                         </p>
-                        <p className="radio col s12 l4">
+                        <p className="radio col s12 m4 l4">
                             <input type="radio" id="planets" value="planets" checked={this.props.selectedCategory === 'planets'} onChange={this.props.handleCategoryChange}/>
                             <label htmlFor="planets">Planets</label>
                         </p>
-                        <p className="radio col s12 l4">
+                        <p className="radio col s12 m4 l4">
                             <input type="radio" id="starships" value="starships" checked={this.props.selectedCategory === 'starships'} onChange={this.props.handleCategoryChange}/>
                             <label htmlFor="starships">Starships</label>
                         </p>

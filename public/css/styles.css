@@ -83,9 +83,9 @@ textarea.materialize-textarea {
   height: 300px;
   margin: 2%; }
 
-li a {
+a {
   color: white; }
-  li a:hover {
+  a:hover {
     color: #ffff00; }
 
 .starships {
@@ -110,7 +110,7 @@ li a {
   text-align: justify;
   overflow: hidden;
   transform-origin: 50% 100%;
-  transform: perspective(300px) rotateX(25deg);
+  transform: perspective(300px) rotateX(10deg);
   color: yellow; }
   #titles:after {
     position: absolute;
