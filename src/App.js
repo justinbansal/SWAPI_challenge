@@ -28,7 +28,7 @@ class App extends Component {
   }
 
  getCategory(){
-    return axios.get(`http://swapi.co/api/${this.state.selectedCategory}/?search=${this.state.search}`)
+    return axios.get(`https://swapi.co/api/${this.state.selectedCategory}/?search=${this.state.search}`)
       .then((result)=>{
         this.setState({
           data:result.data.results
